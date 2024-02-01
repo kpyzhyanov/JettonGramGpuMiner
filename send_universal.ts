@@ -191,7 +191,7 @@ async function main() {
         }
         if (args['--api'] === 'my') {
             console.log('Using my API')
-            liteClient = await getMyClient()
+            liteClient = await getMyClient(args['-c'] ?? 'config.txt')
         }
         else {
             console.log('Using TonHub API')
