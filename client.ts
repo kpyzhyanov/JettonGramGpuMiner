@@ -23,9 +23,9 @@ export function intToIP(int: number) {
 }
 
 export async function getTon4Client(_configUrl?: string): Promise<TonClient4> {
-    if (lc4) {
-        return lc4
-    }
+    // if (lc4) {
+    //     return lc4
+    // }
 
     let endpoint = "https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8"
     lc4 = new TonClient4({ endpoint: endpoint })
@@ -34,9 +34,9 @@ export async function getTon4Client(_configUrl?: string): Promise<TonClient4> {
 }
 
 export async function getTon4ClientOrbs(_configUrl?: string): Promise<TonClient4> {
-    if (lcOrbs) {
-        return lcOrbs
-    }
+    // if (lcOrbs) {
+    //     return lcOrbs
+    // }
     let endpoint = "https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8"
     lcOrbs = new TonClient4({ endpoint: endpoint })
     console.log("Using my endpoint")
