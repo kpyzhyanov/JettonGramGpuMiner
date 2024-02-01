@@ -179,6 +179,11 @@ function main() {
                 console.log('Using LiteServer API');
                 liteClient = yield (0, client_1.getLiteClient)((_a = args['-c']) !== null && _a !== void 0 ? _a : 'https://ton-blockchain.github.io/global.config.json');
             }
+
+            if (args['--api'] === 'my') {
+                console.log('Using My API');
+                liteClient = yield (0, client_1.getMyClient)();            }
+
             else {
                 console.log('Using TonHub API');
                 liteClient = yield (0, client_1.getTon4Client)();
