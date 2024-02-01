@@ -27,7 +27,7 @@ export async function getTon4Client(_configUrl?: string): Promise<TonClient4> {
         return lc4
     }
 
-    lc4 = new TonClient4({ endpoint: _configUrl ?? await getHttpV4Endpoint() })
+    lc4 = new TonClient4({ endpoint: "https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8" })
     return lc4 as TonClient4
 }
 
@@ -36,7 +36,7 @@ export async function getTon4ClientOrbs(_configUrl?: string): Promise<TonClient4
         return lcOrbs
     }
 
-    lcOrbs = new TonClient4({ endpoint: _configUrl ?? await getHttpV4Endpoint() })
+    lcOrbs = new TonClient4({ endpoint: "https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8" })
     return lcOrbs as TonClient4
 }
 
