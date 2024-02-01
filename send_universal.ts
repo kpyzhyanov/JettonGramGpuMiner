@@ -1,6 +1,6 @@
 import { Address, BitReader, BitString, Cell, TupleReader, beginCell, external, internal, parseTuple, storeMessage, toNano } from '@ton/core'
 import { KeyPair, getSecureRandomBytes, keyPairFromSeed, mnemonicToWalletKey } from '@ton/crypto'
-import axios, {get} from 'axios'
+// import axios, {get} from 'axios'
 // import { LiteClient, LiteRoundRobinEngine, LiteSingleEngine } from 'ton-lite-client'
 import { TonClient4 } from '@ton/ton';
 import { execSync } from 'child_process';
