@@ -33,13 +33,13 @@ export async function getTon4Client(_configUrl?: string): Promise<TonClient4> {
     return lc4 as TonClient4
 }
 
-export async function getMyClient(_configUrl?: string): Promise<TonClient4> {
+export async function getMyClient(_configUrl: string): Promise<TonClient4> {
     // if (lc4) {
     //     return lc4
     // }
 
-    let endpoint = "https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8"
-    lc4 = new TonClient4({ endpoint: endpoint })
+    // let endpoint = "https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8"
+    lc4 = new TonClient4({ endpoint: _configUrl })
     console.log("Using my endpoint")
     return lc4 as TonClient4
 }
