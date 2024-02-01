@@ -1,6 +1,6 @@
 import { Address, BitReader, BitString, Cell, TupleReader, beginCell, external, internal, parseTuple, storeMessage, toNano } from '@ton/core'
 import { KeyPair, getSecureRandomBytes, keyPairFromSeed, mnemonicToWalletKey } from '@ton/crypto'
-import axios from 'axios'
+import axios, {get} from 'axios'
 // import { LiteClient, LiteRoundRobinEngine, LiteSingleEngine } from 'ton-lite-client'
 import { TonClient4 } from '@ton/ton';
 import { execSync } from 'child_process';
@@ -10,7 +10,7 @@ import dotenv from 'dotenv'
 import { givers10000, givers100, givers1000 } from './givers'
 import arg from 'arg'
 import { LiteClient, LiteSingleEngine, LiteRoundRobinEngine } from 'ton-lite-client';
-import { getLiteClient, getTon4Client, getTon4ClientOrbs, getTonCenterClient } from './client';
+import { getLiteClient, getTon4Client, getTon4ClientOrbs, getTonCenterClient, getMyClient } from './client';
 import { HighloadWalletV2 } from '@scaleton/highload-wallet';
 import { OpenedContract } from '@ton/core';
 
@@ -188,7 +188,12 @@ async function main() {
         if (args['--api'] === 'lite') {
             console.log('Using LiteServer API')
             liteClient = await getLiteClient(args['-c'] ?? 'https://ton-blockchain.github.io/global.config.json')
-        } else {
+        }
+        if (args['--api'] === 'my') {
+            console.log('Using my API')
+            liteClient = await getMyClient()
+        }
+        else {
             console.log('Using TonHub API')
             liteClient = await getTon4Client()
         }
