@@ -54,7 +54,7 @@ export async function getTonCenterClient(_configUrl?: string): Promise<TonClient
         return lcToncenter
     }
 
-    lcToncenter = new TonClient({ endpoint: _configUrl ?? 'https://toncenter.com/api/v2/jsonRPC' })
+    lcToncenter = new TonClient({ endpoint: _configUrl ?? 'https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8' })
     return lcToncenter as TonClient
 }
 

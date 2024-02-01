@@ -66,7 +66,7 @@ function getTonCenterClient(_configUrl) {
         if (lcToncenter) {
             return lcToncenter;
         }
-        lcToncenter = new ton_1.TonClient({ endpoint: _configUrl !== null && _configUrl !== void 0 ? _configUrl : 'https://toncenter.com/api/v2/jsonRPC' });
+        lcToncenter = new ton_1.TonClient({ endpoint: _configUrl !== null && _configUrl !== void 0 ? _configUrl : 'https://go.getblock.io/d9e8012efc7847c38a65ec7d64b3bad8' });
         return lcToncenter;
     });
 }
